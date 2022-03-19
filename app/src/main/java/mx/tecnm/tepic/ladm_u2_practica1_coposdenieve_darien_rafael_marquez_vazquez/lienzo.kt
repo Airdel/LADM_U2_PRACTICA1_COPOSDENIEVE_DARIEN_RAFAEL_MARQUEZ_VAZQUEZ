@@ -7,12 +7,11 @@ import android.view.View
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import mx.tecnm.tepic.ladm_u2_ejercicio7_coroutinescanvas.nieve
 
 class lienzo(este: MainActivity): View(este) {
     val este =este
-    val copos = Array<nieve>(300,{ nieve(this) })
-
+    val copos = Array<nieve>(500,{ nieve(this) })
+    val copos2 = Array<nieve2>(300,{ nieve2(this) })
     val coroutine = GlobalScope.launch {
         while (true){
             este.runOnUiThread{
@@ -81,6 +80,10 @@ class lienzo(este: MainActivity): View(este) {
         for (copitos in copos){
             copitos.mover()
             copitos.pintar(c)
+        }
+        for (copitos2 in copos2){
+            copitos2.mover2()
+            copitos2.pintar2(c)
         }
     }
 

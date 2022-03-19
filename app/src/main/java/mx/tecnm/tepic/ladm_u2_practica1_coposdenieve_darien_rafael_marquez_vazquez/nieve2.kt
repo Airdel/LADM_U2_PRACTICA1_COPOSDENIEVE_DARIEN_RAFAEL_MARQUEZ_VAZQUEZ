@@ -6,8 +6,8 @@ import android.graphics.Paint
 import mx.tecnm.tepic.ladm_u2_practica1_coposdenieve_darien_rafael_marquez_vazquez.lienzo
 import kotlin.random.Random
 
-class nieve(l: lienzo) {
-    var tamanobola =rand(3)
+class nieve2(l: lienzo) {
+    var tamanobola =10
     val l = l
     var x= 0f
     var y= 0f
@@ -37,9 +37,9 @@ class nieve(l: lienzo) {
         return Random.nextInt(hasta).toFloat()
     }
 
-    fun mover(){
+    fun mover2(){
 
-        y+=(rand(10))
+        y+=(1)
         movY++
         if(x<tamanobola ||x>l.width-tamanobola){
             movX*=-1
@@ -52,7 +52,7 @@ class nieve(l: lienzo) {
         }
     }
 
-    fun pintar(canvas :Canvas){
+    fun pintar2(canvas :Canvas){
         var p = Paint()
         p.color = color
         canvas.drawCircle(x,y,tamanobola.toFloat(),p)
